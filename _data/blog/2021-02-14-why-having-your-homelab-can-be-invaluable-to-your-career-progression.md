@@ -22,13 +22,13 @@ I ultimately decided based on the above requirements, that a Intel NUC was the p
 
 For hardware, I decided to go with Intel BXNUC10I7FNH NUC Barebone Kit - i7 10th Gen, sporting 32 GB of DDR4 2666MHz Crucial memory, with a Samsung 970 EVO 1TB NVMe drive as my primary storage.
 
-Having enough memory in a Homelab quickly became apparent, and also a bottleneck in most cases, as most of my workloads usually only require 1-2 vCPUs, but generally require 4+ GB of memory. 
-
 By using a Intel BXNUC10I7FNH NUC I am able to run VMWare ESXi 7.0 in a 'bare-metal' configuration, which allows me to have greater control and viability over my entire fleet. Plus let's be honest, if ESXi is good enough for most medium to large enterprise, it's good enough for my Homelab.
 
-As for my internet, I have a gigabit fiber link directly to my home, which is completed by the [Unifi Dream Machine](https://store.ui.com/collections/unifi-network-routing-switching/products/unifi-dream-machine). The UDM provides my home wireless routing of internet, Network Intrusion Protection (NIPS), host-based discovery and scanning, ISP speed checks, and much more.
+As for my internet, I have a gigabit fiber link directly to my home, which is complemented by the [Unifi Dream Machine](https://store.ui.com/collections/unifi-network-routing-switching/products/unifi-dream-machine). The UDM provides my home wireless routing of internet, Network Intrusion Protection (NIPS), host-based discovery and scanning, ISP speed checks, and much more.
 
-Having shiny hardware is nice and all, but you probably came here to see what I am running on this kit, so let's discuss what workloads I am currently running.
+Having enough memory in a Homelab quickly became apparent, and also a bottleneck in most cases, as most of my workloads usually only require 1-2 vCPUs, but generally require 4+ GB of memory. I will probably either add another Intel NUC later on down the track, or simply add another 32 GB of memory.
+
+Shiny hardware is nice and all, but you probably came here to see what I am running on this kit, so let's discuss what workloads I am currently running.
 
 # Workloads
 
@@ -58,17 +58,11 @@ As for specific VM based workloads, I am running the following:
 
 ![](/assets/Nextcloud.jpg)
 
-
-
 * Portainer
 
   Portainer provides a nice Web UI to manage all of my containerised workloads, from Homebridge, to MeiliSearch, to bespoke applications I hosted locally for various automation needs.
 
 ![Portainer-image](/assets/Portainer.jpg "Portainer docker image GUI/Web UI")
-
-
-
-
 
 ## Vulnerability scanning
 
@@ -87,8 +81,6 @@ If you have aimed to block ads at the DNS level before, you probably have alread
 Ever since I started writing code around 5 years ago, I have always been frustrated when I could not understand how a certain library, framework or piece of code worked. This frustration had always led me to going home after work and provisioning these solutions locally on my laptop and using them until I fully understood the solution.
 
 Having a Homelab environment now has taught me so much just from general expose to the latest and greatest tooling, frameworks, security tools and much more. The freedom and ability to keep up-to date with the latest and greatest has allowed me to progress in my career and be on the front foot when new solutions are proposed at work.
-
-
 
 # Where to next?
 
