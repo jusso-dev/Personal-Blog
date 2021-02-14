@@ -48,11 +48,9 @@ As for specific VM based workloads, I am running the following:
 
 * Nessus Essentials
 
-  Whether you're running a Homelab or an enterprise fleet of servers, you should not overlook security. Nessus provides me the ability to automatically scan my entire fleet of unix based hosts, and report on any vulnerabilities it finds, as well as any hidden malware.
+  Whether you're running a Homelab or an enterprise fleet of servers, you should not overlook security. Nessus provides me the ability to automatically scan my entire fleet of Unix based hosts, and report on any vulnerabilities it finds, as well as any hidden malware. More on this below.
 
 ![Nessus](/assets/Nessus Essentials.jpg "Nessus Essentials Vulnerability Scanning")
-
-
 
 * Nextcloud 
 
@@ -60,10 +58,38 @@ As for specific VM based workloads, I am running the following:
 
 ![](/assets/Nextcloud.jpg)
 
+
+
+* Portainer
+
+  Portainer provides a nice Web UI to manage all of my containerised workloads, from Homebridge, to MeiliSearch, to bespoke applications I hosted locally for various automation needs.
+
+![Portainer-image](/assets/Portainer.jpg "Portainer docker image GUI/Web UI")
+
+
+
+
+
 ## Vulnerability scanning
+
+As touched on above, security should not be overlooked even in the context of a Homelab environment. Nessus Essentials is free to use, and provides the ability to perform host discovery, scan for malware on various guest host operating systems, scan web applications in the environment, and much much more.
 
 ## Automation
 
+For automation in my Homelab environment, from patching various applications, to installing software on newly created hosts, I have opted to use Red Hat [Ansible](https://www.ansible.com/). Ansible provides me the capability to perform desired state configuration, ensuring my fleet remains up-to date, patched, secure and also have all the required packages and software that I require when provisioning new hosts. In the future I am to look into further automating this and enabling scheduling of Ansible scripts, I am to achieve this initially with [Rundeck](https://www.rundeck.com/open-source).
+
 ## DNS and ad-blocking
 
+If you have aimed to block ads at the DNS level before, you probably have already guessed what I am using, but for the rest of you, I am using [Pihole ](https://pi-hole.net/)to block ads for my entire home at the DNS level, both LAN and WAN. Pihole is fantastic and swallowing up traffic that matches a preconfigured wordlist that contains well known sites that serve ads. Not only can ads sometimes bother us when we are attempting to browse to our favorite sites, they can sometimes be malicious and server unwanted content such as JavaScript payloads that can perform all sorts of nasty actions. Using Pihole is extremely helpful in a Homelab environment, or really in general as it has an in-built DNS feature, that allows Pihole to act as your DNS server. I use Pihole as my primary DNS, failing over to Cloudflare if required. When you start to provision more than 10 hosts in your environment, there comes a point where remembering 10 sets of IP addresses for all workloads becomes impossible, Pihole lets you configure a DNS hostname, so you can have human-readable URL's to remember instead.
+
+# Why has running a Homelab taught me so much
+
+Ever since I started writing code around 5 years ago, I have always been frustrated when I could not understand how a certain library, framework or piece of code worked. This frustration had always led me to going home after work and provisioning these solutions locally on my laptop and using them until I fully understood the solution.
+
+Having a Homelab environment now has taught me so much just from general expose to the latest and greatest tooling, frameworks, security tools and much more. The freedom and ability to keep up-to date with the latest and greatest has allowed me to progress in my career and be on the front foot when new solutions are proposed at work.
+
+
+
 # Where to next?
+
+As for what's next, I plan to fully automate my day-to-day operations, by using Ansible as discussed above. I also intend to run more Nessus scans in an automated fashion, which will require some bespoke code to invoke Nessus API's on a schedule. I also intend on adding more logging, for this I intend to use the ELK stack and the recent [security features of Elastic](https://www.elastic.co/security).
