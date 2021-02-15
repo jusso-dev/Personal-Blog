@@ -2,7 +2,7 @@
 template: BlogPost
 path: /homelabs
 date: 2021-02-13T23:03:55.724Z
-title: Why having your Homelab can be invaluable to your career progression
+title: Why having a Homelab environment can be invaluable to your career progression
 metaDescription: Homelab for learning and career progression
 thumbnail: /assets/IMG_3128.JPG
 ---
