@@ -53,6 +53,8 @@ job "homebridge" {
 }
 ```
 
+
+
 As you can see above, it's fairly intuitive (at least I think so at least) but let's break down the file above:
 
 The section titled "Task" is the meat of the config, there are plenty of other write ups online about Nomad so I won't deep dive here, but essentially the Task section will define how our Docker file should work behind the Nomad service orchestrator.
