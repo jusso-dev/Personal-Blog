@@ -8,7 +8,7 @@ thumbnail: /assets/featured.jpg
 ---
 # Portainer VS Hashicorp Nomad, how do they stack up?
 
-Ok to start with, they are not the same product offering and both perform very different functions, well some the same but are the same but we will get into that..
+Ok to start with, they are not the same product offering and both perform very different functions, well some are the same but we will get into that..
 
 ## What is it?
 
@@ -83,10 +83,10 @@ Here's an example jobspec file for a raw binary:
 
 `task "example" {   driver = "exec"`
 
-`  config {     command = "name-of-my-binary"
+`config {     command = "name-of-my-binary"
   }`
 
-`  artifact {     source = "https://internal.file.server/name-of-my-binary"
+`artifact {     source = "https://internal.file.server/name-of-my-binary"
     options {
       checksum = "sha256:abd123445ds4555555555"
     }
