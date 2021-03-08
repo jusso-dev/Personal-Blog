@@ -1,6 +1,6 @@
 ---
 template: BlogPost
-path: /supercharging-docker-with-hashicorp nomad
+path: /supercharging-docker-with-hashicorp-nomad
 date: 2021-03-08T10:23:55.792Z
 title: 'Making my containerised Homelab more reliable with Hashicorp Nomad '
 metaDescription: 'containers, docker, Hashicorp, Nomad, homelab'
