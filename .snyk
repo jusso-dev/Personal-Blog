@@ -1608,9 +1608,53 @@ patch:
         patched: '2021-03-18T10:13:52.894Z'
     - gatsby > gatsby-cli > gatsby-recipes > @mdx-js/runtime > @mdx-js/mdx > remark-mdx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         patched: '2021-03-18T10:13:52.894Z'
+    - gatsby-plugin-offline > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - gatsby-transformer-remark > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - node-sass > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - gatsby > @typescript-eslint/eslint-plugin > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
     - gatsby > babel-plugin-lodash > lodash:
-        patched: '2021-03-18T10:15:35.036Z'
+        patched: '2021-03-18T10:17:41.297Z'
+    - gatsby > devcert > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - gatsby > eslint-plugin-flowtype > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - gatsby-plugin-offline > cheerio > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - node-sass > sass-graph > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
     - gatsby > babel-plugin-lodash > @babel/types > lodash:
-        patched: '2021-03-18T10:15:35.036Z'
+        patched: '2021-03-18T10:17:41.297Z'
+    - gatsby > webpack-dev-server > http-proxy-middleware > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > netlify-cms-widget-markdown > slate > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > netlify-cms-widget-markdown > slate-react > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - node-sass > gaze > globule > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
     - gatsby > babel-plugin-lodash > @babel/helper-module-imports > @babel/types > lodash:
-        patched: '2021-03-18T10:15:35.036Z'
+        patched: '2021-03-18T10:17:41.297Z'
+    - gatsby > webpack-dev-server > portfinder > async > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > netlify-cms-core > redux-notifications > react-redux > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > @emotion/styled > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - gatsby > babel-preset-gatsby > @babel/preset-env > @babel/preset-modules > @babel/types > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > @emotion/core > @emotion/css > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > netlify-cms-widget-code > react-select > emotion > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > netlify-cms-widget-markdown > react-select > emotion > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > netlify-cms-widget-relation > react-select > emotion > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
+    - netlify-cms-app > netlify-cms-widget-select > react-select > emotion > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2021-03-18T10:17:41.297Z'
