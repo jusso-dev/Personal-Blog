@@ -1608,3 +1608,9 @@ patch:
         patched: '2021-03-18T10:13:52.894Z'
     - gatsby > gatsby-cli > gatsby-recipes > @mdx-js/runtime > @mdx-js/mdx > remark-mdx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         patched: '2021-03-18T10:13:52.894Z'
+    - gatsby > babel-plugin-lodash > lodash:
+        patched: '2021-03-18T10:15:35.036Z'
+    - gatsby > babel-plugin-lodash > @babel/types > lodash:
+        patched: '2021-03-18T10:15:35.036Z'
+    - gatsby > babel-plugin-lodash > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2021-03-18T10:15:35.036Z'
