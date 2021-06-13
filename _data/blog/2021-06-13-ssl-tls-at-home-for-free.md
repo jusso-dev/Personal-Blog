@@ -8,7 +8,7 @@ thumbnail: /assets/51066373-96d4aa80-15be-11e9-91e2-f4e44a3a4458.png
 ---
 Today, I'm going to show how simple it is to setup SSL/TLS for your homelab, or local development environment, by using a tool called [mkcert](https://github.com/FiloSottile/mkcert)!
 
-mkcert is a CLI tool written in Golang that lets you generated trusted certificates for use within your local development environment or homelab, by acting as a fake root CA and providing you the ability to generate certificates that will allow you place SSL certificates on development or local web servers for example, that will enable you to have end-to-end encryption, trusted certificates (no more self-signed certificate warnings) but also use HTTPS endpoints where you really have no choice but to use a secure endpoint, like local private docker container repositories (more on this later)
+mkcert is a CLI tool written in Golang that lets you generate trusted certificates for use within your local development environment or homelab, by acting as a fake root CA and providing you the ability to generate certificates that will allow you place SSL certificates on development or local web servers for example, that will enable you to have end-to-end encryption, trusted certificates (no more self-signed certificate warnings) but also use HTTPS endpoints where you really have no choice but to use a secure endpoint, like local private docker container repositories (more on this later)
 
 ## Setup
 
