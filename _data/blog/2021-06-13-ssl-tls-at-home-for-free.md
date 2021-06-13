@@ -10,8 +10,6 @@ Today, I'm going to show how simple it is to setup SSL/TLS for your homelab, or 
 
 mkcert is a CLI tool written in Golang that lets you generated trusted certificates for use within your local development environment or homelab, by acting as a fake root CA and providing you the ability to generate certificates that will allow you place SSL certificates on development or local web servers for example, that will enable you to have end-to-end encryption, trusted certificates (no more self-signed certificate warnings) but also use HTTPS endpoints where you really have no choice but to use a secure endpoint, like local private docker container repositories (more on this later)
 
-
-
 ## Setup
 
 Setup is fairly painless no matter which system you are on, and [the documentation](https://github.com/FiloSottile/mkcert#installation) is pretty good to an extent at explaining how you get started, but I will try and explain how to install and distribute certificates for my use case (private docker repository) and for all major operating systems i.e. Windows, Mac and Linux.
@@ -44,7 +42,7 @@ brew install mkcert
 
 How you install mkcert on Linux largely depends on the target flavour of Linux, i.e. Ubuntu, RHEL etc, but luckily they have you covered for the most part:
 
-`sudo apt install libnss3-tools     `
+`sudo apt install libnss3-tools`
 
 `-or-
 sudo yum install nss-tools
@@ -82,3 +80,37 @@ mkcert example.com <replace example.com with whatever you use at home>
 ```
 
 Once you generate the above command, in the directory that you ran it from, this will spit out a certificate and the private key for the certificate, i.e. for above it would have generated - "example.com.pem" and "example.com-keys.pem". I was first confused by this because following these instructions for [setting up a private docker registry](https://docs.docker.com/registry/deploying/#get-a-certificate), it was expecting a .pem and a .cer file, and I understand this is the case for most web servers. Don't worry, the .pem file is equivalent in my case, to the .cer file and the keys.pem is the .keys equivalent. There are also online resources available to convert the certificate format to .cer and .der as well if required.
+
+## Establish trust with other machines in your network
+
+Earlier before, I alluded to my use case using mkcert for my local private docker registry, this was the big driver for me to explore this tool because I run a locally deployed version of Rancher at home and wanted to be able to push and pull private docker images from a locally hosted private container repository, and could not do so (neatly without skerting security) without having SSL on my local container repository. 
+
+Once you have generate certificates as described above, simply install mkcert on your target machine, whether that's another developer machine or a server in my case, and run:
+
+`mkcert`
+
+Now, copy the root-CA.pem certificate we generated on our root CA computer, i.e. the first computer we ran mkcert on, to the target computer.
+
+Now, ~/cd into the $CAROOT folder (get this folder by running `mkcert -CAROOT` folder, and copy the root-CA.pem certificate we previously mentioned that we copied to this computer. Remove/delete any other certificates in this folder, and ensure only the root-CA,pem certificate we just copied is in this folder (VERY IMPORTANT).
+
+Now simply run on the target machine:
+
+`mkcert -install`
+
+And boom now you should have end-to-end trusted certificates in your environment! Embrace the green padlock of glory in Chrome!
+
+## Gotcha's
+
+One thing that stumped me when trying this the first time, I followed the above instructions to a T and attempted to browser my locally hosted private docker registry on port 443 and got a SSL warning, this was weird? I can see the certificate belongs to my root CA and my certificate is in my Windows certificate store? what the hell is going on?!
+
+Ok this was weird but maybe I can run the following no problems:
+
+`docker push <image-name:tag> homelab-blah`
+
+Uhm yes but very slowly and with it dropping out 2-3 times before succeeding.
+
+After a lot of head scratching and swearing, I finally traced the issue back to my locally hosted DNS using AdGuard Home. See the issue is I had an A record in for this IP and was resolving it over 443 using the hostname, which was bound to port 80 initially. So once I came back a day later and the TTL had lapsed, I experienced no issues and blazing fast speeds, roughly pushing and pulling ~1 GB images in less than 10 seconds!
+
+That's it! reach out to me on [LinkedIn](https://www.linkedin.com/in/justin-middler/) if you have any questions!
+
+Till next time!
