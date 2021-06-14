@@ -91,7 +91,7 @@ Once you have generate certificates as described above, simply install mkcert on
 
 Now, copy the root-CA.pem certificate we generated on our root CA computer, i.e. the first computer we ran mkcert on, to the target computer.
 
-Now, ~/cd into the $CAROOT folder (get this folder by running `mkcert -CAROOT` folder, and copy the root-CA.pem certificate we previously mentioned that we copied to this computer. Remove/delete any other certificates in this folder, and ensure only the root-CA,pem certificate we just copied is in this folder (VERY IMPORTANT).
+Now, ~/cd into the $CAROOT folder (get this folder by running `mkcert -CAROOT` command), and copy the root-CA.pem certificate we previously mentioned that we copied to this computer. Remove/delete any other certificates in this folder, and ensure only the root-CA,pem certificate we just copied is in this folder (VERY IMPORTANT).
 
 Now simply run on the target machine:
 
@@ -101,15 +101,15 @@ And boom now you should have end-to-end trusted certificates in your environment
 
 ## Gotcha's
 
-One thing that stumped me when trying this the first time, I followed the above instructions to a T and attempted to browser my locally hosted private docker registry on port 443 and got a SSL warning, this was weird? I can see the certificate belongs to my root CA and my certificate is in my Windows certificate store? what the hell is going on?!
+One thing that stumped me when trying this the first time, I followed the above instructions to a T and attempted to browse my locally hosted private docker registry on port 443 and got a SSL warning, this was weird? I can see the certificate belongs to my root CA and my certificate is in my Windows certificate store? what the hell is going on?!
 
 Ok this was weird but maybe I can run the following no problems:
 
 `docker push <image-name:tag> homelab-blah`
 
-Uhm yes but very slowly and with it dropping out 2-3 times before succeeding.
+Uhh yes but very slowly and with it dropping out 2-3 times before succeeding.
 
-After a lot of head scratching and swearing, I finally traced the issue back to my locally hosted DNS using AdGuard Home. See the issue is I had an A record in for this IP and was resolving it over 443 using the hostname, which was bound to port 80 initially. So once I came back a day later and the TTL had lapsed, I experienced no issues and blazing fast speeds, roughly pushing and pulling ~1 GB images in less than 10 seconds!
+After a lot of head scratching and swearing, I finally traced the issue back to my locally hosted DNS using AdGuard Home. See the issue is I had an A record in for this IP and was resolving it over 443 using the hostname, which was bound to port 80 initially. So once I came back a day later and the TTL on my DNS server had lapsed, I experienced no issues and blazing fast speeds, roughly pushing and pulling ~1 GB images in less than 10 seconds!
 
 That's it! reach out to me on [LinkedIn](https://www.linkedin.com/in/justin-middler/) if you have any questions!
 
